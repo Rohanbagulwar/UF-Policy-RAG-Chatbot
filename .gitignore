@@ -1,0 +1,14 @@
+bge-small/*
+/src/models/bge-small/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.venv/
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+.pytest_cache/
+.DS_Store
+.venv/
