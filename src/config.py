@@ -3,7 +3,10 @@ from pathlib import Path
 from typing import Optional
 from dataclasses import dataclass, field
 
+from dotenv import load_dotenv
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(PROJECT_ROOT / ".env")
 
 
 @dataclass
@@ -25,7 +28,7 @@ class ChromaDBConfig:
 def _get_openai_api_key() -> str:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        raise RuntimeError("Set OPENAI_API_KEY in the environment before starting the application.")
+        raise RuntimeError("Set OPENAI_API_KEY in the project-root .env file before starting the application.")
     return api_key
 
 

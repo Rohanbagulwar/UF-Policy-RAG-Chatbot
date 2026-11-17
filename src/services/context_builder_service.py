@@ -23,7 +23,7 @@ class ContextBuilder:
         for i, (doc, metadata) in enumerate(zip(documents, metadatas), 1):
             context_parts.append(f"[{i}]")
             context_parts.append(f"Title: {metadata['title']}")
-            context_parts.append(f"Type: {metadata['type']}")
+            context_parts.append(f"Type: {metadata.get('type', 'Policy')}")
             context_parts.append(f"Category: {metadata['category']}")
             context_parts.append(f"Content: {doc}")
             context_parts.append("")  # Empty line between documents

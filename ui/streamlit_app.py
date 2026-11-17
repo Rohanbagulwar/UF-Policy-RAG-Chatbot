@@ -174,8 +174,8 @@ def load_pipeline() -> RetrievalPipeline:
 
 if not os.environ.get("OPENAI_API_KEY"):
     st.warning(
-        "Add your API key in the terminal before starting Streamlit: "
-        "`export OPENAI_API_KEY=\"your-key\"`."
+        "Add your API key to the project-root `.env` file as "
+        "`OPENAI_API_KEY=your-key`, then restart Streamlit."
     )
     st.stop()
 

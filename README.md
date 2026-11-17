@@ -25,13 +25,19 @@ This repository is organized to support three staged submissions:
    interface, evaluation notebooks, scores, and visualizations are included in
    `src/`, `ui/`, `notebooks/`, and `results/`.
 
-The existing code implements the pretrained BGE RAG baseline. Fine-tuning,
-BM25 and hybrid retrieval, and the independent final test set are planned
-experiments; they are not represented by the current evaluation workbooks.
+The existing application implements the pretrained BGE RAG baseline.
+Fine-tuning, BM25 and hybrid retrieval, and the independent final test set are
+planned experiments; they are not represented by the current evaluation
+workbooks.
 
 ## Requirements
 
-- Python 3.10 or later
+Set `OPENAI_API_KEY` in the project-root `.env` file before starting the
+Streamlit app. `.env` is ignored by Git; copy `.env.example` to `.env` and fill
+in the value locally.
+
+- Python 3.11 or later
+- `uv` for environment and dependency management
 - An active `OPENAI_API_KEY` accepted by the UF AI gateway configured by the
   project
 - Internet access for model/API calls and, when needed, downloading Python
@@ -39,24 +45,24 @@ experiments; they are not represented by the current evaluation workbooks.
 
 ## Installation and setup
 
-Run from the repository root:
+Dependencies from the existing `requirements.txt` are recorded in
+`pyproject.toml` and locked in `uv.lock`. From the repository root, create or
+update the project environment with:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-export OPENAI_API_KEY="your-current-api-key"
+uv sync
 ```
 
-Keep the API key in the environment; do not put it in source files or notebooks.
-If the key changes, restart the application in a terminal where the new
-environment variable is set.
+`uv sync` creates or updates the repository's `.venv` from `uv.lock`. If you
+want a fresh environment and `.venv` already exists, remove that project-local
+environment before running `uv sync`. The `.env` file is git-ignored; copy
+`.env.example` to `.env` if needed and put your API key there. Restart the app
+after changing the key.
 
 ## Run the Streamlit application
 
 ```bash
-streamlit run ui/streamlit_app.py
+uv run streamlit run ui/streamlit_app.py
 ```
 
 Open [http://localhost:8501](http://localhost:8501). Ask a policy question,
