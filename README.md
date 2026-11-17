@@ -1,185 +1,83 @@
 # UF Policy RAG Chatbot
 
-**EEE 6778 Term Project · University of Florida**
+The UF Policy RAG Chatbot helps users find relevant University of Florida
+policy passages with plain-language questions. The Streamlit app displays a
+generated answer, inline citations, retrieved excerpts, and links to official
+policy pages.
 
-UF Policy Assistant is a retrieval-augmented question-answering system for
-University of Florida policies. The current application searches locally
-indexed passages, generates an answer from retrieved context, and shows
-citations, excerpts, and official UF links. The updated project plan tests
-whether a BGE retriever fine-tuned on student-style questions improves
-retrieval and citation support compared with BM25 and pretrained BGE.
+Repository: https://github.com/Rohanbagulwar/UF-Policy-RAG-Chatbot
 
-## Project deliverables
+## Current implementation
 
-This repository is organized to support three staged submissions:
+- Policy snapshot with 1,887 text chunks across 189 policy titles.
+- Pretrained `BAAI/bge-base-en-v1.5` embeddings and the persistent ChromaDB
+  `policies` collection.
+- Answer generation with `gpt-oss-20b` through the UF AI gateway.
+- Streamlit chat with adjustable passage count and visible evidence.
+- A 51-question exploratory evaluation using BLEU, ROUGE, and METEOR.
 
-1. **Data preparation:** policy collection, scraped data, and preparation work
-   are in `data/raw/Web_Scrapped_Dataset/` and
-   [`notebooks/policy_scraper_and_chunking_01.ipynb`](notebooks/policy_scraper_and_chunking_01.ipynb).
-   The updated [executive summary](docs/uf_policy_rag_executive_summary_updated.pdf)
-   defines the current research question and comparison plan.
-2. **Technical blueprint:** the architecture, dataset, interface design,
-   implementation timeline, and responsible-AI considerations are described in
-   the [technical blueprint](docs/uf_policy_rag_technical_blueprint.pdf).
-3. **Implemented system and evaluation:** the retrieval pipeline, Streamlit
-   interface, evaluation notebooks, scores, and visualizations are included in
-   `src/`, `ui/`, `notebooks/`, and `results/`.
+## Set up the environment
 
-The existing application implements the pretrained BGE RAG baseline.
-Fine-tuning, BM25 and hybrid retrieval, and the independent final test set are
-planned experiments; they are not represented by the current evaluation
-workbooks.
-
-## Requirements
-
-Set `OPENAI_API_KEY` in the project-root `.env` file before starting the
-Streamlit app. `.env` is ignored by Git; copy `.env.example` to `.env` and fill
-in the value locally.
-
-- Python 3.11 or later
-- `uv` for environment and dependency management
-- An active `OPENAI_API_KEY` accepted by the UF AI gateway configured by the
-  project
-- Internet access for model/API calls and, when needed, downloading Python
-  packages or the embedding model
-
-## Installation and setup
-
-Dependencies from the existing `requirements.txt` are recorded in
-`pyproject.toml` and locked in `uv.lock`. From the repository root, create or
-update the project environment with:
+The project requires Python 3.11 or later and uses `uv` to install the pinned
+dependencies declared in `pyproject.toml` and `uv.lock`.
 
 ```bash
+git clone https://github.com/Rohanbagulwar/UF-Policy-RAG-Chatbot.git
+cd UF-Policy-RAG-Chatbot
 uv sync
+cp .env.example .env
 ```
 
-`uv sync` creates or updates the repository's `.venv` from `uv.lock`. If you
-want a fresh environment and `.venv` already exists, remove that project-local
-environment before running `uv sync`. The `.env` file is git-ignored; copy
-`.env.example` to `.env` if needed and put your API key there. Restart the app
-after changing the key.
+Set `OPENAI_API_KEY` in the project-root `.env` file. The application reads
+this key for the UF AI gateway. `.env` is ignored by Git; keep credentials out
+of source files and notebooks.
 
-## Run the Streamlit application
+## Verify the data and run the app
 
-```bash
-uv run streamlit run ui/streamlit_app.py
-```
+1. Open [`notebooks/setup.ipynb`](notebooks/setup.ipynb) and run its cells with
+   the project environment. The notebook loads the prepared workbook, previews
+   and summarizes its records, and checks the ChromaDB collection.
+2. Confirm that the application uses the same persistent ChromaDB directory
+   (`data/chroma_db/`) and the `policies` collection. The prepared workbook is
+   `data/raw/Web_Scrapped_Dataset/policies_data.xlsx`; the expected collection
+   has 1,887 passages and uses the pretrained BGE-base encoder.
+3. Run Streamlit from the repository root:
 
-Open [http://localhost:8501](http://localhost:8501). Ask a policy question,
-review the answer's numbered citations and excerpts, and open the linked
-official policy page to verify the source. Generated answers can be incomplete
-or incorrect; the official policy page is the source of truth.
+   ```bash
+   uv run streamlit run ui/streamlit_app.py
+   ```
 
-The app loads the existing local ChromaDB data from `data/chroma_db/` and uses
-the `policies` collection. Do not remove or replace this directory unless you
-intend to rebuild the index.
+4. Open the local URL printed by Streamlit. Ask about an indexed policy and
+   adjust the passage count. Check that the answer, numbered citations,
+   retrieved excerpts, and official source links display.
 
-### Run with Docker
+## Reproduce the preliminary evaluation
 
-Build the image from the repository root and provide the API key when running
-the container:
+Run [`notebooks/RAG_accuracy_score_comparison_06.ipynb`](notebooks/RAG_accuracy_score_comparison_06.ipynb)
+using its reference-answer dataset for the 51-question exploratory evaluation.
+Record the corpus version, retrieval settings, generation model, and commit.
+Export the generated answers and BLEU, ROUGE, and METEOR outputs. Include the
+ROUGE variant, score scale, aggregation method, and any failed or skipped runs.
 
-```bash
-docker build -t uf-policy-assistant .
-docker run --rm -p 8501:8501 \
-  -e OPENAI_API_KEY="$OPENAI_API_KEY" \
-  uf-policy-assistant
-```
+These three metrics describe answer-text overlap. Retrieval Recall@5, mean
+reciprocal rank, claim-level citation support, and refusal behavior will be
+measured on a separate held-out evaluation set.
 
-Open [http://localhost:8501](http://localhost:8501). The image includes the
-local ChromaDB index. The embedding model is downloaded when the app initializes.
+## Known issues and next steps
 
-## App screenshots
+- Add collection provenance, missing-value and duplicate checks, a
+  passage-length plot, and a small collection example to the setup notebook.
+- Audit and freeze the corpus. Build policy-based splits, reviewed training
+  pairs, and an independently reviewed final test set.
+- Compare BM25, pretrained BGE-small, fine-tuned BGE-small, and hybrid
+  retrieval.
+- Add a retrieval-method selector and an explicit insufficient-evidence
+  response to Streamlit.
+- Official UF policy pages remain the authority for policy decisions. Omit
+  private details when using the chat.
 
-The app also includes a collapsible **Project screenshots** gallery with the
-submitted interface, citation, and official-policy-page screenshots from
-[`docs/visuals/`](docs/visuals/).
+## Author and contact
 
-## Run the notebooks
+Rohan Bagulwar · M.S. in Applied Data Science · University of Florida
 
-Start Jupyter from the repository root so notebooks can locate project data and
-modules:
-
-```bash
-jupyter lab
-```
-
-Run [`notebooks/setup.ipynb`](notebooks/setup.ipynb) first. It checks the
-environment, loads and summarizes the prepared policy workbook, and verifies
-the local ChromaDB collection without making an API call.
-In VS Code, select the Python interpreter from this project's `.venv` as the
-notebook kernel; the setup notebook reports when application dependencies are
-missing from the currently selected kernel.
-
-Open and run the workflow notebooks in this order as needed:
-
-1. [`notebooks/setup.ipynb`](notebooks/setup.ipynb) — verify dependencies,
-   load the prepared dataset, and check the local ChromaDB index.
-2. [`notebooks/policy_scraper_and_chunking_01.ipynb`](notebooks/policy_scraper_and_chunking_01.ipynb) —
-   collection, extraction, and chunking.
-3. [`notebooks/Rag_workflow_02.ipynb`](notebooks/Rag_workflow_02.ipynb) —
-   embedding and vector-store workflow.
-4. [`notebooks/retrival_pipeline_03.ipynb`](notebooks/retrival_pipeline_03.ipynb) —
-   retrieval and generation experiments.
-5. [`notebooks/retrive_answers_on_golden_dataset_04.ipynb`](notebooks/retrive_answers_on_golden_dataset_04.ipynb)
-   and [`notebooks/RAG_chatbot_different_llm_answers_05.ipynb`](notebooks/RAG_chatbot_different_llm_answers_05.ipynb) —
-   answer generation and model comparisons. The golden-dataset notebook asks
-   for the API key using hidden input, runs the configured model, and saves
-   resumable answers under `results/Accuracy_scores/`.
-6. [`notebooks/RAG_accuracy_score_comparison_06.ipynb`](notebooks/RAG_accuracy_score_comparison_06.ipynb) —
-   evaluation and plots.
-
-The accuracy notebook installs its NLTK, ROUGE, and plotting dependencies into
-the active notebook kernel (not a separate `pip3 --user` Python installation).
-For a reproducible environment, install `requirements.txt` first and select
-that same environment as the notebook kernel.
-
-## Dataset
-
-The project uses public policy pages from the University of Florida's Policy
-and Regulation Hub. Scraped policy content and metadata are stored under
-`data/raw/Web_Scrapped_Dataset/`. The `policies_data.xlsx` workbook currently
-contains 1,887 text chunks across 189 policy titles. It records title,
-category, type, official URL, chunk number, and text; JSON versions are in the
-same directory. The persistent ChromaDB index is stored locally in
-`data/chroma_db/`. Evaluation questions and generated-answer results are in
-the workbooks under `results/`. The planned study will audit coverage of all
-publicly accessible hub documents and create policy-level train/development/
-test splits and an independently reviewed final question set.
-
-Data is text, not personal records. Retrieved passages are sent with a user's
-question to the configured language-model API to generate an answer. Do not
-enter private or sensitive information. Policy pages can change, so validate
-answers against the official source links.
-
-## Project layout
-
-```text
-data/
-  raw/Web_Scrapped_Dataset/  Scraped policy data and source workbook
-  chroma_db/                 Persistent ChromaDB index
-docs/
-  uf_policy_rag_executive_summary_updated.pdf  Current research plan
-  uf_policy_rag_technical_blueprint.pdf
-  visuals/                   App, citation, and source-page screenshots
-notebooks/                   Data preparation, retrieval, and evaluation
-  setup.ipynb                Environment and prepared-data verification
-results/
-  Accuracy_scores/           Evaluation workbooks
-  visualizations/            Evaluation plots
-src/
-  config.py                  Model, database, and API configuration
-  retrival_pipeline.py       Retrieval pipeline entry point
-  clients/                   Language-model API client
-  models/                    Embedding model wrapper
-  services/                  Retrieval, prompts, context, and source lookup
-  vectorstore/               ChromaDB manager
-ui/
-  streamlit_app.py           Streamlit chat interface
-requirements.txt              Python dependencies
-```
-
-## Author
-
-- **Name:** Rohan Bagulwar
-- **Contact:** Via the EEE 6778 course submission channel (Rohan Bagulwar)
+Contact: https://github.com/Rohanbagulwar
