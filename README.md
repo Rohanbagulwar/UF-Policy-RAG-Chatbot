@@ -14,6 +14,9 @@ Repository: https://github.com/Rohanbagulwar/UF-Policy-RAG-Chatbot
   `policies` collection.
 - Answer generation with `gpt-oss-20b` through the UF AI gateway.
 - Streamlit chat with adjustable passage count and visible evidence.
+- An optional fine-tuned BGE synthetic-trial profile when its local checkpoint
+  and matching Chroma index are available. It is experimental and has not been
+  validated on an independent human-authored test set.
 - A 51-question exploratory evaluation using BLEU, ROUGE, and METEOR.
 
 ## Set up the environment

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_workbook": "data/raw/Web_Scrapped_Dataset/policies_data.xlsx",
+  "source_sha256": "40614a91618009f24b8cb29b1c17a1f4194b05324a2de62fae6613f207bbed6c",
+  "chunker": "RecursiveCharacterTextSplitter; chunk_size=1000; chunk_overlap=100 (notebook settings)",
+  "accepted_chunks": 1887,
+  "policies": 192,
+  "rejected": {},
+  "split_seed": 42,
+  "split_counts": {
+    "test": 29,
+    "development": 29,
+    "train": 134
+  },
+  "manifest_sha256": "b7b509221c23a8559bb83d0f801509d91380c3049c3c00f306fd960a222f8d86",
+  "splits_sha256": "d964eb70e84ff37031e3a971f5d9e8bb31aaa111443c81d0685032b6d5b8407d"
+}

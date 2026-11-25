@@ -35,7 +35,11 @@ class ChromaDBManager:
             self.collection = self.client.get_collection(name=self.config.collection_name)
             print(f"Retrieved existing collection: {self.config.collection_name}")
             print(f"  Current documents: {self.collection.count()}")
-        except:
+        except chromadb.errors.NotFoundError as exc:
+            if self.config.require_existing_collection:
+                raise FileNotFoundError(
+                    f"Required Chroma collection was not found: {self.config.collection_name}"
+                ) from exc
             self.collection = self.client.create_collection(
                 name=self.config.collection_name,
                 metadata={"description": self.config.description}

@@ -2,13 +2,34 @@ import os
 import sys
 from pathlib import Path
 #  ./.venv/bin/streamlit run ui/streamlit_app.py
+# uv run --offline --no-sync python -m streamlit run ui/streamlit_app.py
 import streamlit as st
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.config import ChromaDBConfig, EmbeddingConfig
 from src.retrival_pipeline import RetrievalPipeline
+
+BASELINE_PROFILE = "Pretrained BGE (baseline)"
+FINETUNED_PROFILE = "Fine-tuned BGE (synthetic trial)"
+FINETUNING_DIRECTORY = PROJECT_ROOT / "src" / "finetuning"
+FINETUNING_ARTIFACTS = FINETUNING_DIRECTORY / "artifacts"
+FINETUNED_CHECKPOINT = FINETUNING_ARTIFACTS / "checkpoints" / "pilot_v1"
+FINETUNED_PERSIST_DIRECTORY = FINETUNING_ARTIFACTS / "chroma_finetuned_synthetic_v1"
+FINETUNED_MANIFEST = FINETUNING_ARTIFACTS / "manifest.v1.jsonl"
+FINETUNED_PROFILE_AVAILABLE = all(
+    path.is_file()
+    for path in (
+        FINETUNING_DIRECTORY / "common.py",
+        FINETUNING_DIRECTORY / "index.py",
+        FINETUNED_CHECKPOINT / "config.json",
+        FINETUNED_CHECKPOINT / "model.safetensors",
+        FINETUNED_PERSIST_DIRECTORY / "chroma.sqlite3",
+        FINETUNED_MANIFEST,
+    )
+)
 
 
 st.set_page_config(
@@ -42,6 +63,56 @@ st.markdown(
         background: linear-gradient(180deg, #062879 0%, #00174d 100%);
     }
     [data-testid="stSidebar"] * { color: #f8fafc; }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] [role="group"] {
+        border: 1px solid #ffb49e !important;
+        background-color: #fa4616 !important;
+        border-radius: 0.5rem;
+    }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] [role="group"]:hover {
+        background-color: #d9380f !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] input[role="combobox"] {
+        background-color: transparent !important;
+        color: #fff !important;
+        caret-color: #fff;
+    }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] button[aria-label="Open"] {
+        background-color: transparent !important;
+        color: #fff !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] button[aria-label="Open"] svg {
+        fill: currentColor !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] [role="group"]:focus-within {
+        border-color: #fff !important;
+        box-shadow: 0 0 0 2px #ffb49e !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stAlert"] {
+        border: 1px solid #ffb49e !important;
+        border-radius: 12px;
+        background-color: #fff1e8 !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stAlertContainer"],
+    [data-testid="stSidebar"] [data-testid^="stAlertContent"] {
+        background-color: #fff1e8 !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stAlert"] * {
+        color: #17243b !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stAlert"] svg {
+        color: #fa4616 !important;
+        fill: currentColor !important;
+    }
+    [data-baseweb="popover"] [role="listbox"] { background: #fff; }
+    [data-baseweb="popover"] [role="option"] { color: #17243b; }
+    [data-baseweb="popover"] [role="option"]:hover {
+        background: #fff1e8;
+        color: #17243b;
+    }
+    [data-baseweb="popover"] [role="option"][aria-selected="true"] {
+        background: #e8efff;
+        color: #0021a5;
+    }
     [data-testid="stSidebar"] [data-testid="stMetricLabel"] { color: #cbd5e1; }
     [data-testid="stSidebar"] [data-testid="stMetricValue"] { color: #fff; }
     .block-container { max-width: 1120px; padding-top: 2rem; padding-bottom: 4rem; }
@@ -166,11 +237,84 @@ st.markdown(
 
 
 @st.cache_resource(show_spinner="Warming up the Gator…")
-def load_pipeline() -> RetrievalPipeline:
-    pipeline = RetrievalPipeline()
+def load_pipeline(
+    model_name: str,
+    persist_directory: str,
+    collection_name: str,
+    checkpoint_path: str | None = None,
+) -> RetrievalPipeline:
+    persist_path = Path(persist_directory)
+    if not persist_path.is_dir():
+        raise FileNotFoundError(f"Chroma index directory not found: {persist_path}")
+
+    checkpoint = Path(checkpoint_path) if checkpoint_path else None
+    if checkpoint is not None:
+        if not checkpoint.is_dir():
+            raise FileNotFoundError(f"Fine-tuned checkpoint not found: {checkpoint}")
+        if not FINETUNED_MANIFEST.is_file():
+            raise FileNotFoundError(f"Fine-tuning manifest not found: {FINETUNED_MANIFEST}")
+
+        from src.finetuning.common import sha256_file
+        from src.finetuning.index import compatible
+
+    pipeline = RetrievalPipeline(
+        embedding_config=EmbeddingConfig(model_name=model_name),
+        chroma_config=ChromaDBConfig(
+            persist_directory=str(persist_path),
+            collection_name=collection_name,
+            require_existing_collection=True,
+        ),
+    )
     pipeline.initialize()
+
+    collection = pipeline.chroma_manager.collection
+    if collection is None or collection.count() == 0:
+        raise ValueError(f"Chroma collection is empty: {collection_name}")
+
+    if checkpoint is not None:
+        metadata = collection.metadata or {}
+        if (
+            metadata.get("evaluation_type") != "assistant_reviewed_synthetic_questions"
+            or metadata.get("independent_human_test") is not False
+        ):
+            raise ValueError("Selected fine-tuned index is not labeled as a synthetic trial")
+        compatible(
+            metadata,
+            checkpoint,
+            pipeline.embedding_model.get_dimension(),
+            sha256_file(FINETUNED_MANIFEST),
+        )
     return pipeline
 
+
+profile_options = [BASELINE_PROFILE]
+if FINETUNED_PROFILE_AVAILABLE:
+    profile_options.append(FINETUNED_PROFILE)
+
+if st.session_state.get("retrieval_profile") not in profile_options:
+    st.session_state["retrieval_profile"] = BASELINE_PROFILE
+
+with st.sidebar:
+    selected_profile = st.selectbox(
+        "Retrieval model and index",
+        options=profile_options,
+        key="retrieval_profile",
+        help="The model and Chroma collection are switched together so their vectors stay compatible.",
+    )
+    if selected_profile == FINETUNED_PROFILE:
+        st.warning(
+            "Experimental synthetic-trial model. Its evaluation used AI-generated "
+            "questions and is not an independent human test."
+        )
+    else:
+        st.caption("Original pretrained BGE model and baseline Chroma collection.")
+        if not FINETUNED_PROFILE_AVAILABLE:
+            st.info("The fine-tuned profile is unavailable because its local code or model/index artifacts are missing.")
+
+if st.session_state.get("_active_retrieval_profile") not in (None, selected_profile):
+    st.session_state["messages"] = []
+    st.sidebar.info("Conversation cleared after switching retrieval models.")
+st.session_state["_active_retrieval_profile"] = selected_profile
 
 if not os.environ.get("OPENAI_API_KEY"):
     st.warning(
@@ -179,7 +323,27 @@ if not os.environ.get("OPENAI_API_KEY"):
     )
     st.stop()
 
-pipeline = load_pipeline()
+if selected_profile == FINETUNED_PROFILE:
+    profile = {
+        "model_name": str(FINETUNED_CHECKPOINT),
+        "persist_directory": str(FINETUNED_PERSIST_DIRECTORY),
+        "collection_name": "policies_finetuned_synthetic",
+        "checkpoint_path": str(FINETUNED_CHECKPOINT),
+    }
+else:
+    profile = {
+        "model_name": EmbeddingConfig().model_name,
+        "persist_directory": str(PROJECT_ROOT / "data" / "chroma_db"),
+        "collection_name": "policies",
+        "checkpoint_path": None,
+    }
+
+try:
+    pipeline = load_pipeline(**profile)
+except (OSError, RuntimeError, ValueError) as exc:
+    st.error(f"Could not load {selected_profile}: {exc}")
+    st.stop()
+
 stats = pipeline.chroma_manager.get_collection_stats()
 
 with st.sidebar:

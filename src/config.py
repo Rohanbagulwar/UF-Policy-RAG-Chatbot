@@ -23,6 +23,7 @@ class ChromaDBConfig:
     persist_directory: str = str(PROJECT_ROOT / "data" / "chroma_db")
     collection_name: str = "policies"
     description: str = "UF Policy documents with embeddings"
+    require_existing_collection: bool = False
 
 
 def _get_openai_api_key() -> str:

@@ -1,0 +1,39 @@
+{"chunk_id": "f250c42acdd0a7e6084524b0", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "8737016bdaee426a948bfeb2", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "6960fe4a4259a078f256ac0f", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "ec87bdd55461b89b416ace09", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "d47afc37e4596a6f3a612ec9", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "8b6483de639fa5103b3e05c5", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "92e7cddc634472aacd483267", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "dd56eee8aafe7e7887995f4e", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "7a470eb485a326a042a477e4", "error": "Expecting ',' delimiter: line 1 column 394 (char 393)", "error_type": "JSONDecodeError"}
+{"chunk_id": "448eb7247a029afb7877279e", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "f8e924a4da59989e92a96f60", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "9392f4f30df4b1fb47c65b79", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "747f6032681d7dce50299b41", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "0052fd100579a50d600c4dd4", "error": "Unterminated string starting at: line 1 column 346 (char 345)", "error_type": "JSONDecodeError"}
+{"chunk_id": "a2637f59123db484c1ade529", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "bdffa1e0a60178931873c194", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "4d1d2220c752e001ffe0ba90", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "b247890c0b59d01147516687", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "fb7ab9d255e49832117a677e", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "ff7ccaccf9d7fc7bfe1de6f0", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "05011db96619f247794e5825", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "bd966118985e633049872374", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "62294de12fe5aa40e2ebf3fc", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "16760a62b40293f1279806c3", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "f97f1f53b85db28711cf806e", "error": "Expecting value: line 1 column 1 (char 0)", "error_type": "JSONDecodeError"}
+{"chunk_id": "ffca374f1c74c0a0c46f61ea", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "0b93b4666db669d98ab9bd0f", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "3fea03d88e0fe2fb22d87909", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "8e921d991c0347a857570839", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "a46ca649f00cc6c98bdda796", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "e0ff48a095c27e08c29429e1", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "857d0fb40b4cad6acf00763a", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "e11d9482bd0f8c04342d64f5", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "941d127d7aa782ffa61293b2", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "0e327eb413bbf53a7c3ab0f2", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "5ad905413b87a028a1142d42", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "e0ff48a095c27e08c29429e1", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "e0ff48a095c27e08c29429e1", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}
+{"chunk_id": "e0ff48a095c27e08c29429e1", "error": "Supporting quote is absent from passage", "error_type": "ValueError"}

@@ -1,0 +1,1459 @@
+{
+  "evaluation_type": "assistant_reviewed_synthetic_questions",
+  "independent_human_test": false,
+  "test_sha256": "e72380714ca3f72d02b69c377320bcf74a338b91a1857df8c56074e5fd923510",
+  "manifest_sha256": "b7b509221c23a8559bb83d0f801509d91380c3049c3c00f306fd960a222f8d86",
+  "splits_sha256": "d964eb70e84ff37031e3a971f5d9e8bb31aaa111443c81d0685032b6d5b8407d",
+  "candidate_chunks": 1887,
+  "test_questions": 23,
+  "base_model": "BAAI/bge-base-en-v1.5",
+  "base_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "pretrained": {
+    "overall": {
+      "recall@1": 0.6957,
+      "recall@3": 0.7826,
+      "recall@5": 0.913,
+      "mrr@10": 0.7739,
+      "ndcg@10": 0.8174
+    },
+    "groups": {
+      "category:Information Technology": {
+        "n": 2,
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.5
+      },
+      "question_type:direct": {
+        "n": 6,
+        "recall@1": 0.8333,
+        "recall@3": 0.8333,
+        "recall@5": 0.8333,
+        "mrr@10": 0.8333,
+        "ndcg@10": 0.8333
+      },
+      "category:Agriculture and Natural Resources": {
+        "n": 2,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:eligibility": {
+        "n": 5,
+        "recall@1": 0.6,
+        "recall@3": 0.6,
+        "recall@5": 1.0,
+        "mrr@10": 0.7,
+        "ndcg@10": 0.7723
+      },
+      "category:Academic Affairs": {
+        "n": 5,
+        "recall@1": 0.6,
+        "recall@3": 0.8,
+        "recall@5": 1.0,
+        "mrr@10": 0.75,
+        "ndcg@10": 0.8123
+      },
+      "category:Student Life": {
+        "n": 2,
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr@10": 0.35,
+        "ndcg@10": 0.5089
+      },
+      "question_type:procedure": {
+        "n": 5,
+        "recall@1": 0.6,
+        "recall@3": 0.8,
+        "recall@5": 1.0,
+        "mrr@10": 0.74,
+        "ndcg@10": 0.8036
+      },
+      "category:Research": {
+        "n": 1,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:definition": {
+        "n": 4,
+        "recall@1": 0.75,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.875,
+        "ndcg@10": 0.9077
+      },
+      "category:Human Resources": {
+        "n": 8,
+        "recall@1": 0.875,
+        "recall@3": 0.875,
+        "recall@5": 0.875,
+        "mrr@10": 0.8875,
+        "ndcg@10": 0.9111
+      },
+      "question_type:consequence": {
+        "n": 1,
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr@10": 0.1,
+        "ndcg@10": 0.2891
+      },
+      "category:Finance": {
+        "n": 2,
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr@10": 0.625,
+        "ndcg@10": 0.7153
+      },
+      "category:Health Affairs": {
+        "n": 1,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:exception": {
+        "n": 2,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    "queries": [
+      {
+        "question": "What security risks must UF assess for its information systems?",
+        "positive_chunk_id": "5a94a9f2529f0ef96f9cb4ca",
+        "rank": null,
+        "top10_chunk_ids": [
+          "d32a7600423491e40d2d8eca",
+          "33332d31238b2b1bdfd7ee8f",
+          "14f6eeee55523c476e1c45da",
+          "bf7d441c3c49ed5430cfa160",
+          "66db3ae5cd454c2c47eeb72f",
+          "592afcd61324a7dd91a5237e",
+          "5ef1e0c2a7c32e30ed93fc35",
+          "e52d4220d51080c4d216690d",
+          "559e766a8b86939bb152867e",
+          "93dcd90b6e29caebce82a1f5"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "mrr@10": 0.0,
+          "ndcg@10": 0.0
+        },
+        "category": "Information Technology",
+        "question_type": "direct"
+      },
+      {
+        "question": "How is sick and vacation leave for County Extension faculty generally governed?",
+        "positive_chunk_id": "e6e4578eb6c253b2d91d69a8",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "e6e4578eb6c253b2d91d69a8",
+          "ec948cad10b52f665f441b7a",
+          "3ab501836eb444bac7247efc",
+          "8d8f8267b07d2a4c056072c8",
+          "2c8387347d8131a32ec16c54",
+          "db53b43aa444698bb0b009b3",
+          "31c1cc14bdcd6d9bd16d209c",
+          "981787d4e485f94bb2fc9816",
+          "8ce6300d1cf3156d8c15435d",
+          "eb40436ed4bc71dea27a2746"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Agriculture and Natural Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "Which catalog is listed first in the University Record Series?",
+        "positive_chunk_id": "9123856621899c2a15121207",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "9123856621899c2a15121207",
+          "4a2a6b3601f5c40d74f5fd72",
+          "f4524f49d5ef140b5f1f6a3e",
+          "e9124dbcc73693d00902f71f",
+          "f5d2818c6c9e5913b336c8ac",
+          "1e5593f8dcf8851b90a2e207",
+          "87e4d8186932b55a3799e86e",
+          "e95e56bb486c0087f0749b6b",
+          "0f5215f92c1e192393899cbf",
+          "d2137dc9d17d4e1a5bdbfc62"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "direct"
+      },
+      {
+        "question": "What must a student do when occupying a University residence hall space?",
+        "positive_chunk_id": "8ca98b75061543853dfd24cf",
+        "rank": 2,
+        "top10_chunk_ids": [
+          "ed960e6a0a0aac8fe034f952",
+          "8ca98b75061543853dfd24cf",
+          "f74c55e2207995f388d773f3",
+          "193bc16ff334b282109538ef",
+          "cded825970d946c45a62b21a",
+          "6bbb3176397d41d225e20c11",
+          "dbdc96dcf5bde6a94d7ee3ac",
+          "5e585c77029cdf12692cc6c5",
+          "d5b4999d4ea7778b5c00583e",
+          "90625058a4c1fc42db41dfca"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.5,
+          "ndcg@10": 0.6309297535714575
+        },
+        "category": "Student Life",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What does the Research Integrity policy define as fabrication?",
+        "positive_chunk_id": "6392d62fd28e9ec9bb892ea0",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "6392d62fd28e9ec9bb892ea0",
+          "c90a95b3595b5edd55bf217f",
+          "ce0404a3ecc34dd905b67fa1",
+          "3255cd0b9614a492bd88aa95",
+          "2d37571e550c0f5530ce4f80",
+          "b12e06a89bfd5b309d807c4c",
+          "218cd094ae364002cc9011b4",
+          "69bfaacc6d8fc02b9da11ce2",
+          "d6b864d912196d663a4e27dd",
+          "0e45febf7237ac8f603832b7"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Research",
+        "question_type": "definition"
+      },
+      {
+        "question": "What could happen if an employee fails to comply with the Marine Operator testing policy?",
+        "positive_chunk_id": "7cf2b663fc9e1bb1a91cb256",
+        "rank": 10,
+        "top10_chunk_ids": [
+          "2fec2daee74fa78a94f2aa55",
+          "4e90f5eb71e7e8442c83f258",
+          "026ee0df0786eb89038e7155",
+          "c77b875d9bfd485c41ae3cd5",
+          "055fe60dc554e985179d5ffa",
+          "02a69bb23369fce7d937c0f0",
+          "b8eadf2a88f777f14e265ff1",
+          "09a8b308922f42edbcf70d49",
+          "510560d1634bea68c1ddf15e",
+          "7cf2b663fc9e1bb1a91cb256"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "mrr@10": 0.1,
+          "ndcg@10": 0.2890648263178879
+        },
+        "category": "Human Resources",
+        "question_type": "consequence"
+      },
+      {
+        "question": "Are the days used for time limits in this faculty grievance regulation business days or calendar days?",
+        "positive_chunk_id": "b3a72dca126f488a0f2d45c9",
+        "rank": 2,
+        "top10_chunk_ids": [
+          "cf08809f225c7cba494f0dee",
+          "b3a72dca126f488a0f2d45c9",
+          "827fcfe8a6bc221e79c80a89",
+          "49d5ef3b610029cc990a8c80",
+          "a6f7e0dbc75b3b42c1a2a78b",
+          "a5a19cae5f0a1468ca4358f5",
+          "ffca374f1c74c0a0c46f61ea",
+          "6af8a78e483a350643f4e303",
+          "291212a7f12387444dbad0e4",
+          "265c234e124043a126ac5967"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.5,
+          "ndcg@10": 0.6309297535714575
+        },
+        "category": "Academic Affairs",
+        "question_type": "definition"
+      },
+      {
+        "question": "When may UF authorize advance payment for goods or services?",
+        "positive_chunk_id": "d6c3e660a3b5e8806df062c3",
+        "rank": 4,
+        "top10_chunk_ids": [
+          "178276abd28c32bd94e87b3c",
+          "d4f787ab88ca91e9ac20a26b",
+          "1bf044c294f0e6aeade7681e",
+          "d6c3e660a3b5e8806df062c3",
+          "7d3546f752c87ed406484ab4",
+          "e532c7675398f117a6da1b7e",
+          "459eda85e8732d491ae93bc9",
+          "109178c77b3db6ac1594f497",
+          "c4fb873e76febd9b19080c9d",
+          "05800b0e526a7553ef8d178c"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.25,
+          "ndcg@10": 0.43067655807339306
+        },
+        "category": "Finance",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "What limits does the policy place on a clinical faculty restrictive covenant?",
+        "positive_chunk_id": "5dad78b87d930a57c965c7f3",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "5dad78b87d930a57c965c7f3",
+          "04659c7a24454b243dadb8a0",
+          "c84a100a26ac39e31bbd86b7",
+          "790e2c5775ba3edbc9887e89",
+          "960e83d47faf8ca4d59a2ba1",
+          "05f9e25ab60581f234566533",
+          "3104a6b2193906425b964db5",
+          "85ed28bb854bfdf267e2731c",
+          "3739272ee3cedb30e3381342",
+          "a03caf8f19067e76b52488e5"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "definition"
+      },
+      {
+        "question": "Under the policy, how are TEAMS employees generally treated for rehire after a layoff or time-limited appointment ending?",
+        "positive_chunk_id": "2e9f8ab8c9edf174b294c2c4",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2e9f8ab8c9edf174b294c2c4",
+          "f11490a5da38a0f000de5798",
+          "3076c1c73d9cc6d4e20e478c",
+          "f527e382576940d0d4307e11",
+          "b99c5e916a769f285ac8a328",
+          "4ca4e4017515cd58661bef56",
+          "29deb881e0da3ef1f07b6ae8",
+          "d1076dedfd0fd9941036ef93",
+          "4633832450343bd3f324c398",
+          "354e6a9798746bf76e4a70bf"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "If an employee has a 0.75 FTE appointment, what paid family leave example does the policy give?",
+        "positive_chunk_id": "d961755fd9c98113483d9a80",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "d961755fd9c98113483d9a80",
+          "15cfa3bc381b17f77b3502cc",
+          "d7ac4aab2c6a812a621e4b7c",
+          "3aece7382aa3edc243c3cc3b",
+          "0c8732e769acda4e6e456388",
+          "88611d007b3474abc2257059",
+          "2f7c004d7fe7a9d5fba7bcfe",
+          "8e8f526b2468e062ac65e17b",
+          "edd9b2e38e6811eadc6c2a30",
+          "29c64ed1923232b0a4ad915c"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "direct"
+      },
+      {
+        "question": "What does the policy say about salaried residents\u2019 fringe benefits and outside activities?",
+        "positive_chunk_id": "4e634f135daf273db27b3e0e",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "4e634f135daf273db27b3e0e",
+          "bfc2528afb15ba70009b4445",
+          "bf8222e9d50f1e5efa706c82",
+          "1a176e7c45df91a590ae3850",
+          "ccaf956e8aa0db065114429f",
+          "9beff6184472f951b5d0db05",
+          "100187317d4fd8eccc5fe320",
+          "f865c939d06af9b3a136f490",
+          "ba11935e9882bc0a9c341fbd",
+          "49b451f78e521b64fd2f3825"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Health Affairs",
+        "question_type": "direct"
+      },
+      {
+        "question": "What is required for a member of the public to tour an IFAS Research and Education Center?",
+        "positive_chunk_id": "3bcae0e1394206a9ff93ffae",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "3bcae0e1394206a9ff93ffae",
+          "428f49e362721935c4a4263e",
+          "6b2c87509f3fca2f4fbd1309",
+          "699522c8403c19e1e2419dd6",
+          "8b4877de92e1fc4a4b28288d",
+          "e11d9482bd0f8c04342d64f5",
+          "e0f8334c05effb4734a96b1e",
+          "02e0ccb86e57b2df126783c1",
+          "ae91162cdf7d23d732799b62",
+          "213d5797733d4f68b0173859"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Agriculture and Natural Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What should a UF employee do if they feel sick, according to the workplace health policy?",
+        "positive_chunk_id": "2e0b8aac65fc3f049aec9bfd",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2e0b8aac65fc3f049aec9bfd",
+          "220e1284917689d55ececd1b",
+          "8f9d0eb4e36e77bf86a53e06",
+          "544de644de978c55fd254028",
+          "c2f429341e3fdfc0a6ed0b83",
+          "943a3bb0443f572ce62a9560",
+          "8e921d991c0347a857570839",
+          "439a692f9c6ed1b1e554b3cf",
+          "8346097b16470912df2d5d4d",
+          "fb56d6b6e6ba9bf03fe1e9f1"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What should a UF employee have before providing an employment reference?",
+        "positive_chunk_id": "b0f23cb7b44e3a3d92d7b01e",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "b0f23cb7b44e3a3d92d7b01e",
+          "4dc51fed7d09a9117192e4a4",
+          "f5f23448e2daf91addf39308",
+          "ae7a459079868691c63ff065",
+          "c1804cffc584ee4c44090ee3",
+          "a59e994ef342259282dc401d",
+          "e69fa6d25b53f9ec0a55ada5",
+          "e9a97f452f6104c92fd7ec46",
+          "8018876efab1adf5f816b1fe",
+          "86dfdea9f7cf7e024ca8a46a"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "Does trying to resolve a faculty complaint informally pause the 30-calendar-day filing limit?",
+        "positive_chunk_id": "827fcfe8a6bc221e79c80a89",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "827fcfe8a6bc221e79c80a89",
+          "49d5ef3b610029cc990a8c80",
+          "c2ae76e5b93b10fe14827585",
+          "6af8a78e483a350643f4e303",
+          "a6f7e0dbc75b3b42c1a2a78b",
+          "b3a72dca126f488a0f2d45c9",
+          "377c5dca96fc8e8a1c356774",
+          "291212a7f12387444dbad0e4",
+          "1f967dbcd2a3cd6dabdc130d",
+          "57948618dca0e48814304321"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "exception"
+      },
+      {
+        "question": "Which university facilities does the physical IT security policy cover?",
+        "positive_chunk_id": "e299e08c2ffcf7c3fe5af37f",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "e299e08c2ffcf7c3fe5af37f",
+          "227dc98e12744b6dc1b66500",
+          "66db3ae5cd454c2c47eeb72f",
+          "bf7d441c3c49ed5430cfa160",
+          "a196e972b8640739d13355c4",
+          "66fa1d99ee78d74f7369dfa6",
+          "14f6eeee55523c476e1c45da",
+          "d32a7600423491e40d2d8eca",
+          "78fdc9a8b1644bfbb2b1cac3",
+          "4bc0b5a6498c67fc59541284"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Information Technology",
+        "question_type": "definition"
+      },
+      {
+        "question": "What must an F- or J-visa student demonstrate to enroll or continue at UF?",
+        "positive_chunk_id": "a8a54f11277c92fbfd2d0dfa",
+        "rank": 4,
+        "top10_chunk_ids": [
+          "8b4877de92e1fc4a4b28288d",
+          "01e2807c371d02c70bf31fce",
+          "ebb8e541074a60edcf4f9822",
+          "a8a54f11277c92fbfd2d0dfa",
+          "da3a433c53a26f34f32592db",
+          "699522c8403c19e1e2419dd6",
+          "c57c870386dd335d4aa37ce9",
+          "5f317d93042b077d6329bcc6",
+          "e0ff48a095c27e08c29429e1",
+          "48072e2e1c1b09325032753f"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.25,
+          "ndcg@10": 0.43067655807339306
+        },
+        "category": "Academic Affairs",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "What is the primary investment objective stated in the UF investment policy?",
+        "positive_chunk_id": "2394cd39e47e0f6e36ad893a",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2394cd39e47e0f6e36ad893a",
+          "b8f722ccd0688bc93232320f",
+          "d317a17db2bcb45abbe9632e",
+          "b2c2a714b855b97b633ca00b",
+          "bea954c550784f517c17e7b0",
+          "1df1a4ed974b2d9bfb547d4f",
+          "3fdf05fb592ace2a4ea93d96",
+          "95ef19188bc7c4e854608407",
+          "8c40a8566be7840bb0d19dc5",
+          "af47a01246ed77546ae825dc"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Finance",
+        "question_type": "direct"
+      },
+      {
+        "question": "How much on-call pay does the policy specify during an employee\u2019s regular work week?",
+        "positive_chunk_id": "d1fcbb664280df336b534cb2",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "d1fcbb664280df336b534cb2",
+          "de8aacd9bd31065ecb4f30cb",
+          "23ecd9ec6f74f76ae0a5d2e7",
+          "8e6a18ae68e87079ff9d7c09",
+          "fa52d47407dd8501c9fa0deb",
+          "f0dacae2dec5108da30bb8dc",
+          "88d6eb7a336ea58a70652c2c",
+          "cac8c3a4c48c9a60a171ac84",
+          "ae7a53c9f7a58fdcfe125a17",
+          "6fa23b884b2f5c17782a3c13"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "direct"
+      },
+      {
+        "question": "How much resignation notice does the regulation require from exempt and non-exempt TEAMS staff?",
+        "positive_chunk_id": "eb5738f381dbf3569c07d400",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "eb5738f381dbf3569c07d400",
+          "3076c1c73d9cc6d4e20e478c",
+          "631ce642a705d9eb4f9b7743",
+          "052143767a7ced11b9ca4b12",
+          "e72c76a08f6499f38cb82f88",
+          "4633832450343bd3f324c398",
+          "a93c42cc0b08b1eb2aa58105",
+          "f11490a5da38a0f000de5798",
+          "872606343b4c1f8a91045a21",
+          "634a90ab861e10e76963035a"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What restriction should UF employees observe regarding distributions from FRS retirement programs?",
+        "positive_chunk_id": "ba11935e9882bc0a9c341fbd",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "ba11935e9882bc0a9c341fbd",
+          "ccaf956e8aa0db065114429f",
+          "da379a7ad830124077ae17d0",
+          "352b2b8b90204d812ca29467",
+          "2ac68f175242428409e33b68",
+          "b171a0fdce29bab81be10776",
+          "49b451f78e521b64fd2f3825",
+          "ac6a98cbba858fa826e015be",
+          "bcf4f95cd657eaa033a236fc",
+          "86355cbc9799419c1f1b5c18"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "exception"
+      },
+      {
+        "question": "Whom may a student contact during the Student Conduct Process to discuss access needs?",
+        "positive_chunk_id": "5d1bdedd59b9655fc3629ded",
+        "rank": 5,
+        "top10_chunk_ids": [
+          "152a0bda4917cc2bdb1660c7",
+          "a50f0876d58c5e9ede057a0e",
+          "fd3137488f018a36671c14fe",
+          "5948df2046fb9c7d1115c6b9",
+          "5d1bdedd59b9655fc3629ded",
+          "3f85cc3ac9de6a0dbeb0fd3b",
+          "ff4c95ef2ecff563a0cb1283",
+          "4ea530d3d3a2332702f050d0",
+          "d30c01fdc9d8b288eb7a7c03",
+          "b345ad2477c217ec50977317"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.2,
+          "ndcg@10": 0.38685280723454163
+        },
+        "category": "Student Life",
+        "question_type": "procedure"
+      }
+    ]
+  },
+  "fine_tuned_model": "src/finetuning/artifacts/checkpoints/pilot_v1",
+  "fine_tuned_fingerprint": "236ea4cf7cba27d3a47d45a62996b3735a54f9d9f9b1723dd94fdafdd8786c6d",
+  "fine_tuned": {
+    "overall": {
+      "recall@1": 0.7826,
+      "recall@3": 0.913,
+      "recall@5": 0.913,
+      "mrr@10": 0.8377,
+      "ndcg@10": 0.8661
+    },
+    "groups": {
+      "category:Information Technology": {
+        "n": 2,
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.5
+      },
+      "question_type:direct": {
+        "n": 6,
+        "recall@1": 0.8333,
+        "recall@3": 0.8333,
+        "recall@5": 0.8333,
+        "mrr@10": 0.8333,
+        "ndcg@10": 0.8333
+      },
+      "category:Agriculture and Natural Resources": {
+        "n": 2,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:eligibility": {
+        "n": 5,
+        "recall@1": 0.8,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.8667,
+        "ndcg@10": 0.9
+      },
+      "category:Academic Affairs": {
+        "n": 5,
+        "recall@1": 0.6,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.7667,
+        "ndcg@10": 0.8262
+      },
+      "category:Student Life": {
+        "n": 2,
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.6667,
+        "ndcg@10": 0.75
+      },
+      "question_type:procedure": {
+        "n": 5,
+        "recall@1": 0.8,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.8667,
+        "ndcg@10": 0.9
+      },
+      "category:Research": {
+        "n": 1,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:definition": {
+        "n": 4,
+        "recall@1": 0.75,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 0.875,
+        "ndcg@10": 0.9077
+      },
+      "category:Human Resources": {
+        "n": 8,
+        "recall@1": 0.875,
+        "recall@3": 0.875,
+        "recall@5": 0.875,
+        "mrr@10": 0.8875,
+        "ndcg@10": 0.9111
+      },
+      "question_type:consequence": {
+        "n": 1,
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr@10": 0.1,
+        "ndcg@10": 0.2891
+      },
+      "category:Finance": {
+        "n": 2,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "category:Health Affairs": {
+        "n": 1,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "question_type:exception": {
+        "n": 2,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    "queries": [
+      {
+        "question": "What security risks must UF assess for its information systems?",
+        "positive_chunk_id": "5a94a9f2529f0ef96f9cb4ca",
+        "rank": null,
+        "top10_chunk_ids": [
+          "d32a7600423491e40d2d8eca",
+          "14f6eeee55523c476e1c45da",
+          "5ef1e0c2a7c32e30ed93fc35",
+          "33332d31238b2b1bdfd7ee8f",
+          "bf7d441c3c49ed5430cfa160",
+          "93dcd90b6e29caebce82a1f5",
+          "66db3ae5cd454c2c47eeb72f",
+          "592afcd61324a7dd91a5237e",
+          "6025a361c266f8f914409854",
+          "e52d4220d51080c4d216690d"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "mrr@10": 0.0,
+          "ndcg@10": 0.0
+        },
+        "category": "Information Technology",
+        "question_type": "direct"
+      },
+      {
+        "question": "How is sick and vacation leave for County Extension faculty generally governed?",
+        "positive_chunk_id": "e6e4578eb6c253b2d91d69a8",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "e6e4578eb6c253b2d91d69a8",
+          "ec948cad10b52f665f441b7a",
+          "8d8f8267b07d2a4c056072c8",
+          "8ce6300d1cf3156d8c15435d",
+          "eb40436ed4bc71dea27a2746",
+          "3ab501836eb444bac7247efc",
+          "981787d4e485f94bb2fc9816",
+          "db53b43aa444698bb0b009b3",
+          "31c1cc14bdcd6d9bd16d209c",
+          "8e86c96905e4f22b7e8d0bd5"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Agriculture and Natural Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "Which catalog is listed first in the University Record Series?",
+        "positive_chunk_id": "9123856621899c2a15121207",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "9123856621899c2a15121207",
+          "4a2a6b3601f5c40d74f5fd72",
+          "f4524f49d5ef140b5f1f6a3e",
+          "e9124dbcc73693d00902f71f",
+          "f5d2818c6c9e5913b336c8ac",
+          "87e4d8186932b55a3799e86e",
+          "e95e56bb486c0087f0749b6b",
+          "1e5593f8dcf8851b90a2e207",
+          "0f5215f92c1e192393899cbf",
+          "b6c7033572548976f17794ef"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "direct"
+      },
+      {
+        "question": "What must a student do when occupying a University residence hall space?",
+        "positive_chunk_id": "8ca98b75061543853dfd24cf",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "8ca98b75061543853dfd24cf",
+          "ed960e6a0a0aac8fe034f952",
+          "f74c55e2207995f388d773f3",
+          "cded825970d946c45a62b21a",
+          "dbdc96dcf5bde6a94d7ee3ac",
+          "d5b4999d4ea7778b5c00583e",
+          "193bc16ff334b282109538ef",
+          "6bbb3176397d41d225e20c11",
+          "cb12f3cfbc6331b552428647",
+          "5e585c77029cdf12692cc6c5"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Student Life",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What does the Research Integrity policy define as fabrication?",
+        "positive_chunk_id": "6392d62fd28e9ec9bb892ea0",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "6392d62fd28e9ec9bb892ea0",
+          "ce0404a3ecc34dd905b67fa1",
+          "c90a95b3595b5edd55bf217f",
+          "2d37571e550c0f5530ce4f80",
+          "3255cd0b9614a492bd88aa95",
+          "b12e06a89bfd5b309d807c4c",
+          "218cd094ae364002cc9011b4",
+          "69bfaacc6d8fc02b9da11ce2",
+          "d6b864d912196d663a4e27dd",
+          "c446a8ee88bf150f3e483e5b"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Research",
+        "question_type": "definition"
+      },
+      {
+        "question": "What could happen if an employee fails to comply with the Marine Operator testing policy?",
+        "positive_chunk_id": "7cf2b663fc9e1bb1a91cb256",
+        "rank": 10,
+        "top10_chunk_ids": [
+          "2fec2daee74fa78a94f2aa55",
+          "4e90f5eb71e7e8442c83f258",
+          "c77b875d9bfd485c41ae3cd5",
+          "026ee0df0786eb89038e7155",
+          "055fe60dc554e985179d5ffa",
+          "02a69bb23369fce7d937c0f0",
+          "b8eadf2a88f777f14e265ff1",
+          "09a8b308922f42edbcf70d49",
+          "510560d1634bea68c1ddf15e",
+          "7cf2b663fc9e1bb1a91cb256"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "mrr@10": 0.1,
+          "ndcg@10": 0.2890648263178879
+        },
+        "category": "Human Resources",
+        "question_type": "consequence"
+      },
+      {
+        "question": "Are the days used for time limits in this faculty grievance regulation business days or calendar days?",
+        "positive_chunk_id": "b3a72dca126f488a0f2d45c9",
+        "rank": 2,
+        "top10_chunk_ids": [
+          "cf08809f225c7cba494f0dee",
+          "b3a72dca126f488a0f2d45c9",
+          "827fcfe8a6bc221e79c80a89",
+          "49d5ef3b610029cc990a8c80",
+          "a6f7e0dbc75b3b42c1a2a78b",
+          "a5a19cae5f0a1468ca4358f5",
+          "6af8a78e483a350643f4e303",
+          "291212a7f12387444dbad0e4",
+          "1573390fee647d9b1b913d08",
+          "ffca374f1c74c0a0c46f61ea"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.5,
+          "ndcg@10": 0.6309297535714575
+        },
+        "category": "Academic Affairs",
+        "question_type": "definition"
+      },
+      {
+        "question": "When may UF authorize advance payment for goods or services?",
+        "positive_chunk_id": "d6c3e660a3b5e8806df062c3",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "d6c3e660a3b5e8806df062c3",
+          "178276abd28c32bd94e87b3c",
+          "d4f787ab88ca91e9ac20a26b",
+          "1bf044c294f0e6aeade7681e",
+          "7d3546f752c87ed406484ab4",
+          "e532c7675398f117a6da1b7e",
+          "277251de1b1fd98ddef56e2e",
+          "b78a3f4f78709b3f4c7cf987",
+          "ef49500944dde7b7e9a75e42",
+          "1899e6cd0d2bc94b21decc9c"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Finance",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "What limits does the policy place on a clinical faculty restrictive covenant?",
+        "positive_chunk_id": "5dad78b87d930a57c965c7f3",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "5dad78b87d930a57c965c7f3",
+          "04659c7a24454b243dadb8a0",
+          "c84a100a26ac39e31bbd86b7",
+          "790e2c5775ba3edbc9887e89",
+          "3104a6b2193906425b964db5",
+          "05f9e25ab60581f234566533",
+          "960e83d47faf8ca4d59a2ba1",
+          "3739272ee3cedb30e3381342",
+          "85ed28bb854bfdf267e2731c",
+          "a03caf8f19067e76b52488e5"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "definition"
+      },
+      {
+        "question": "Under the policy, how are TEAMS employees generally treated for rehire after a layoff or time-limited appointment ending?",
+        "positive_chunk_id": "2e9f8ab8c9edf174b294c2c4",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2e9f8ab8c9edf174b294c2c4",
+          "3076c1c73d9cc6d4e20e478c",
+          "f11490a5da38a0f000de5798",
+          "f527e382576940d0d4307e11",
+          "b99c5e916a769f285ac8a328",
+          "4ca4e4017515cd58661bef56",
+          "4633832450343bd3f324c398",
+          "354e6a9798746bf76e4a70bf",
+          "29deb881e0da3ef1f07b6ae8",
+          "d1076dedfd0fd9941036ef93"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "If an employee has a 0.75 FTE appointment, what paid family leave example does the policy give?",
+        "positive_chunk_id": "d961755fd9c98113483d9a80",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "d961755fd9c98113483d9a80",
+          "15cfa3bc381b17f77b3502cc",
+          "d7ac4aab2c6a812a621e4b7c",
+          "2f7c004d7fe7a9d5fba7bcfe",
+          "3aece7382aa3edc243c3cc3b",
+          "0c8732e769acda4e6e456388",
+          "88611d007b3474abc2257059",
+          "8e8f526b2468e062ac65e17b",
+          "edd9b2e38e6811eadc6c2a30",
+          "29c64ed1923232b0a4ad915c"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "direct"
+      },
+      {
+        "question": "What does the policy say about salaried residents\u2019 fringe benefits and outside activities?",
+        "positive_chunk_id": "4e634f135daf273db27b3e0e",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "4e634f135daf273db27b3e0e",
+          "bfc2528afb15ba70009b4445",
+          "ccaf956e8aa0db065114429f",
+          "bf8222e9d50f1e5efa706c82",
+          "9beff6184472f951b5d0db05",
+          "f865c939d06af9b3a136f490",
+          "1a176e7c45df91a590ae3850",
+          "100187317d4fd8eccc5fe320",
+          "63127c3c81aec8bfa0741188",
+          "ba11935e9882bc0a9c341fbd"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Health Affairs",
+        "question_type": "direct"
+      },
+      {
+        "question": "What is required for a member of the public to tour an IFAS Research and Education Center?",
+        "positive_chunk_id": "3bcae0e1394206a9ff93ffae",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "3bcae0e1394206a9ff93ffae",
+          "428f49e362721935c4a4263e",
+          "6b2c87509f3fca2f4fbd1309",
+          "699522c8403c19e1e2419dd6",
+          "e11d9482bd0f8c04342d64f5",
+          "e0f8334c05effb4734a96b1e",
+          "8b4877de92e1fc4a4b28288d",
+          "b17cd9f8d4862febabad0de4",
+          "5b554e354906474b24fe7c0a",
+          "02e0ccb86e57b2df126783c1"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Agriculture and Natural Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What should a UF employee do if they feel sick, according to the workplace health policy?",
+        "positive_chunk_id": "2e0b8aac65fc3f049aec9bfd",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2e0b8aac65fc3f049aec9bfd",
+          "220e1284917689d55ececd1b",
+          "8f9d0eb4e36e77bf86a53e06",
+          "544de644de978c55fd254028",
+          "8346097b16470912df2d5d4d",
+          "943a3bb0443f572ce62a9560",
+          "c2f429341e3fdfc0a6ed0b83",
+          "8e921d991c0347a857570839",
+          "439a692f9c6ed1b1e554b3cf",
+          "fb56d6b6e6ba9bf03fe1e9f1"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What should a UF employee have before providing an employment reference?",
+        "positive_chunk_id": "b0f23cb7b44e3a3d92d7b01e",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "b0f23cb7b44e3a3d92d7b01e",
+          "4dc51fed7d09a9117192e4a4",
+          "f5f23448e2daf91addf39308",
+          "ae7a459079868691c63ff065",
+          "c1804cffc584ee4c44090ee3",
+          "a59e994ef342259282dc401d",
+          "e69fa6d25b53f9ec0a55ada5",
+          "ab359b5010d06ed66a95745a",
+          "7481749fe9bbcecec8073fdd",
+          "81f66c58d6f2145c4758bbd3"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "Does trying to resolve a faculty complaint informally pause the 30-calendar-day filing limit?",
+        "positive_chunk_id": "827fcfe8a6bc221e79c80a89",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "827fcfe8a6bc221e79c80a89",
+          "49d5ef3b610029cc990a8c80",
+          "c2ae76e5b93b10fe14827585",
+          "6af8a78e483a350643f4e303",
+          "b3a72dca126f488a0f2d45c9",
+          "a6f7e0dbc75b3b42c1a2a78b",
+          "377c5dca96fc8e8a1c356774",
+          "291212a7f12387444dbad0e4",
+          "615b71e9a147d3095ec0c8c9",
+          "57948618dca0e48814304321"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Academic Affairs",
+        "question_type": "exception"
+      },
+      {
+        "question": "Which university facilities does the physical IT security policy cover?",
+        "positive_chunk_id": "e299e08c2ffcf7c3fe5af37f",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "e299e08c2ffcf7c3fe5af37f",
+          "227dc98e12744b6dc1b66500",
+          "66db3ae5cd454c2c47eeb72f",
+          "bf7d441c3c49ed5430cfa160",
+          "a196e972b8640739d13355c4",
+          "14f6eeee55523c476e1c45da",
+          "66fa1d99ee78d74f7369dfa6",
+          "4bc0b5a6498c67fc59541284",
+          "8ffa32ccdf3f7cf7e4d23f10",
+          "e52d4220d51080c4d216690d"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Information Technology",
+        "question_type": "definition"
+      },
+      {
+        "question": "What must an F- or J-visa student demonstrate to enroll or continue at UF?",
+        "positive_chunk_id": "a8a54f11277c92fbfd2d0dfa",
+        "rank": 3,
+        "top10_chunk_ids": [
+          "8b4877de92e1fc4a4b28288d",
+          "01e2807c371d02c70bf31fce",
+          "a8a54f11277c92fbfd2d0dfa",
+          "ebb8e541074a60edcf4f9822",
+          "da3a433c53a26f34f32592db",
+          "c57c870386dd335d4aa37ce9",
+          "699522c8403c19e1e2419dd6",
+          "48072e2e1c1b09325032753f",
+          "75fe7448907a40e081cc6af3",
+          "e0ff48a095c27e08c29429e1"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.3333333333333333,
+          "ndcg@10": 0.5
+        },
+        "category": "Academic Affairs",
+        "question_type": "eligibility"
+      },
+      {
+        "question": "What is the primary investment objective stated in the UF investment policy?",
+        "positive_chunk_id": "2394cd39e47e0f6e36ad893a",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "2394cd39e47e0f6e36ad893a",
+          "b8f722ccd0688bc93232320f",
+          "3fdf05fb592ace2a4ea93d96",
+          "1df1a4ed974b2d9bfb547d4f",
+          "0c6f3d3883e9c0d0bedb298d",
+          "bea954c550784f517c17e7b0",
+          "d317a17db2bcb45abbe9632e",
+          "8c40a8566be7840bb0d19dc5",
+          "b2c2a714b855b97b633ca00b",
+          "a7282c1025d494d5969624f1"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Finance",
+        "question_type": "direct"
+      },
+      {
+        "question": "How much on-call pay does the policy specify during an employee\u2019s regular work week?",
+        "positive_chunk_id": "d1fcbb664280df336b534cb2",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "d1fcbb664280df336b534cb2",
+          "de8aacd9bd31065ecb4f30cb",
+          "23ecd9ec6f74f76ae0a5d2e7",
+          "8e6a18ae68e87079ff9d7c09",
+          "fa52d47407dd8501c9fa0deb",
+          "f0dacae2dec5108da30bb8dc",
+          "ae7a53c9f7a58fdcfe125a17",
+          "88d6eb7a336ea58a70652c2c",
+          "cac8c3a4c48c9a60a171ac84",
+          "f1c121f940c9e9195c4e9574"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "direct"
+      },
+      {
+        "question": "How much resignation notice does the regulation require from exempt and non-exempt TEAMS staff?",
+        "positive_chunk_id": "eb5738f381dbf3569c07d400",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "eb5738f381dbf3569c07d400",
+          "3076c1c73d9cc6d4e20e478c",
+          "052143767a7ced11b9ca4b12",
+          "631ce642a705d9eb4f9b7743",
+          "f11490a5da38a0f000de5798",
+          "e72c76a08f6499f38cb82f88",
+          "4633832450343bd3f324c398",
+          "a93c42cc0b08b1eb2aa58105",
+          "62ccbfc8e981d841bd326f23",
+          "b82a73dcbcc7ea6703b833a1"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "procedure"
+      },
+      {
+        "question": "What restriction should UF employees observe regarding distributions from FRS retirement programs?",
+        "positive_chunk_id": "ba11935e9882bc0a9c341fbd",
+        "rank": 1,
+        "top10_chunk_ids": [
+          "ba11935e9882bc0a9c341fbd",
+          "ccaf956e8aa0db065114429f",
+          "da379a7ad830124077ae17d0",
+          "352b2b8b90204d812ca29467",
+          "2ac68f175242428409e33b68",
+          "b171a0fdce29bab81be10776",
+          "49b451f78e521b64fd2f3825",
+          "ac6a98cbba858fa826e015be",
+          "bcf4f95cd657eaa033a236fc",
+          "86355cbc9799419c1f1b5c18"
+        ],
+        "metrics": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        "category": "Human Resources",
+        "question_type": "exception"
+      },
+      {
+        "question": "Whom may a student contact during the Student Conduct Process to discuss access needs?",
+        "positive_chunk_id": "5d1bdedd59b9655fc3629ded",
+        "rank": 3,
+        "top10_chunk_ids": [
+          "152a0bda4917cc2bdb1660c7",
+          "a50f0876d58c5e9ede057a0e",
+          "5d1bdedd59b9655fc3629ded",
+          "fd3137488f018a36671c14fe",
+          "5948df2046fb9c7d1115c6b9",
+          "3f85cc3ac9de6a0dbeb0fd3b",
+          "4ea530d3d3a2332702f050d0",
+          "00d3185573ea6ef48a05ca77",
+          "ff4c95ef2ecff563a0cb1283",
+          "a13c933fd4d56bfaec63a45c"
+        ],
+        "metrics": {
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr@10": 0.3333333333333333,
+          "ndcg@10": 0.5
+        },
+        "category": "Student Life",
+        "question_type": "procedure"
+      }
+    ]
+  }
+}
